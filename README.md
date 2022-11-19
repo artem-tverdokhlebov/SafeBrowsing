@@ -18,10 +18,6 @@
 - [x] Check multiple URLs asynchronously
 - [x] Check single URL asynchronously
 - [x] Check single URL synchronously
-- [x] Open URL in Safari only if it's safe
-- [x] UIApplication extension
-- [x] UIViewController extension
-- [x] SFSafariViewController compatible
 
 ## 📲 Installation
 
@@ -92,50 +88,6 @@ SafeBrowsing.isSafe(anURL) { isSafe, error in
 
 ```swift
 if SafeBrowsing.isSafe(anURL) {
-    // Your code here
-}
-```
-
-#### Open URL in Safari only if it's safe:
-
-```swift
-SafeBrowsing.safeOpen(anURL) { opened, error in
-    // Your code here
-}
-```
-
-#### Open URL in SFSafariViewController only if it's safe:
-
-```swift
-SafeBrowsing.safeOpenInSafariViewController(anURL, over: aViewController, animated: true) { opened, error in
-    // Your code here
-}
-```
-
-### UIApplication extension
-
-Yes, you can use SafeBrowsing with UIApplication, just like [open(_:options:completionHandler:)](https://developer.apple.com/documentation/uikit/uiapplication/1648685-open) method works.
-
-You also have all isSafe(_:) methods available with this extension.
-
-```swift
-UIApplication.shared.safeOpen(anURL) { opened, error in
-    // Your code here
-}
-```
-
-#### Open URL in SFSafariViewController only if it's safe:
-
-```swift
-UIApplication.shared.safeOpenInSafariViewController(anURL, over: aViewController, animated: true) { opened, error in
-    // Your code here
-}
-```
-
-#### UIViewController extension
-
-```swift
-aViewController.safeOpenInSafariViewController(anURL, animated: true) { opened, error in
     // Your code here
 }
 ```
